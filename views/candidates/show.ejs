@@ -1,0 +1,86 @@
+<%- include("../partials/header") %>
+<!-- show -->
+<div class="container">
+	<div class="my-4">
+		<h1>
+			<%= candidate.name %>'s Profile
+		</h1>
+	</div>
+	<div class="my-4">
+		<img src="<%= candidate.image%>">
+	</div>
+	<!-- Into -->
+	<div class="col-md-9 my-4">
+		
+		<dl class="row">
+			<dt class="col-sm-3">Gender</dt>
+			<dd class="col-sm-9"><%= candidate.gender %></dd>
+
+			<dt class="col-sm-3">Has taken vaccine?</dt>
+			<dd class="col-sm-9"><%= candidate.vaccine%></dd>
+
+			<dt class="col-sm-3">Description</dt>
+			<dd class="col-sm-9">
+				<p>
+					<%= candidate.description %>
+				</p>
+			</dd>
+			<dd class="col-sm-9">
+				<p>
+					Submitted By <%= candidate.author.username %>
+				</p>
+			</dd>
+			<% if(currentUser && candidate.author.id.equals(currentUser._id)){%>
+				<div class="d-inline">
+					<a class="btn btn-xs btn-warning" href="/candidates/<%= candidate._id %>/edit">Edit</a>
+				</div>
+				<div class="d-inline">
+					<form action="/candidates/<%= candidate._id %>?_method=DELETE" method="POST" class="d-inline">
+						<button class="btn btn-xs btn-danger">Delete</button>
+					</form>
+				</div>
+			<% } %>
+		</dl>
+	</div>
+	<!-- comments -->
+	<div class="col-md-9">
+		<p>
+			<a class="btn btn-success" href ="/candidates/<%= candidate._id %>/comments/new">Add New Comment</a>
+		</p>
+	</div>
+	
+	<div class="col-md-9">
+		<table class="table table-striped">
+		  <tbody>
+			<% candidate.comments.forEach(function(comment){%>
+			<tr>
+			  	<th scope="row"><strong><%= comment.author.username%></strong></th>
+			  	<td><%= comment.text %></td>
+				<td>
+				<% if(currentUser && comment.author.id.equals(currentUser._id)){%>
+						<form action="/candidates/<%= candidate._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+							<input type="submit" class="btn btn-xs btn-danger" value="Delete">
+						</form>
+				<% } %>
+				</td>
+			</tr>
+			
+		  </tbody>
+		</table>
+		
+		<% });%>
+	</div>
+	
+	<div class="col-md-9">
+	<a href="/candidates">Go Back</a>
+	</div>
+	<div class="container my-4">
+		<footer>
+			<cite>!!All animals info are fake. Images are from google.</cite>
+		</footer>
+	</div>
+	
+</div>
+
+	
+<%- include("../partials/footer") %>

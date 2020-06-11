@@ -1,0 +1,40 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<!-- jumbotron -->
+	<header class = "jumbotron">
+		<div class = "container">
+			<h1>
+			Welcome to PetLover
+			</h1> 
+			<p>
+				View our lovely candidates and give them a home!
+			</p>
+			<p>
+				<a class = "btn btn-primary btn-large" href="/candidates/new">Add New Candidate!</a>
+			</p>
+		</div>
+	</header>
+	<!-- gallery -->
+	<div class = "row">
+		<% candidates.forEach(function(candidate){ %>
+		<div class = "col-md-3 col-sm-6">
+			<figure class="figure">
+  				<img src="<%= candidate.image %>" class="figure-img img-fluid rounded" alt="Loading...">
+  				<figcaption class="figure-caption"><%= candidate.name %></figcaption>
+			</figure>
+			<p>
+				<a href="/candidates/<%= candidate._id%>" class="btn btn-primary">More Info</a>
+			</p>
+		</div>
+		<% }); %>
+	</div>
+	
+	
+</div>
+<div class="container my-4">
+	<footer>
+		<cite>!!All animals info are fake. Images are from google.</cite>
+	</footer>
+</div>
+	
+<%- include("../partials/footer") %>

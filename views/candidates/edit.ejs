@@ -1,0 +1,81 @@
+<%- include("../partials/header")%>
+
+<!-- form -->
+<div class="container">
+	<h1 style="text-align: center">
+		Edit a New Candidate
+	</h1>
+	<div style="width:30%; margin:25px auto;">
+		<form action="/candidates/<%= candidates._id %>?_method=PUT" method="POST">
+			<!-- pet name -->
+			<div class="form-group">
+				<label for="petName">Name</label>
+				<input type="text" class="form-control" id="petName" name="candidate[name]" value="<%= candidates.name %>" required>
+			</div>
+			<!-- pet image -->
+			<div class="form-group">
+				<label for="petImage">Image url</label>
+				<input type="text" class="form-control" id="petImage" name="candidate[image]" value="<%= candidates.image %>"required>
+			</div>
+			<!-- pet gender -->
+			<fieldset class="form-group">
+				<legend class="col-form-label">Gender</legend>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="candidate[gender]" id="petMale" value="Male"
+						   <% if(candidates.gender == "Male"){ %>
+							   <%= "checked" %>
+						   <% } %>
+						   >
+					<label class="form-check-label" for="petMale">Male</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="candidate[gender]" id="petFemale" value="Female"
+						   <% if(candidates.gender == "Female"){ %>
+							   <%= "checked" %>
+						   <% } %>
+						   >
+						   
+					<label class="form-check-label" for="petFemale">Female</label>
+				</div>
+			</fieldset>
+			
+			<!-- pet vaccine -->
+			<fieldset class="form-group">
+				<legend class="col-form-label">Has taken vaccine?</legend>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="candidate[vaccine]" id="petVaccineTrue" value="Yes"
+						   <% if(candidates.vaccine == "Yes"){ %>
+							   <%= "checked" %>
+						   <% } %>
+						   >
+					<label class="form-check-label" for="petVaccineTrue">Yes</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="candidate[vaccine]" id="petVaccineFalse" value="No"
+						   <% if(candidates.vaccine == "No"){ %>
+							   <%= "checked" %>
+						   <% } %>
+						   >
+					<label class="form-check-label" for="petVaccineFalse">No</label>
+				</div>
+			</fieldset>
+			<!-- pet description -->
+			<div class="form-group">
+				<label for="description">Description</label>
+				<textarea type="text" class="form-control" id="description" name="candidate[description]" ><%= candidates.description %></textarea>
+			</div>
+		
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block">Submit</button>
+			</div>
+
+		</form>
+		<a href="/candidates/<%= candidates._id%>">Go Back</a>
+	</div>
+		
+		
+		
+	
+</div>
+
+<%- include("../partials/footer") %>
