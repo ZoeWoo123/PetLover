@@ -58,7 +58,7 @@ app.use("/candidates", candidateRoutes);
 
 
 
-app.listen(3000, process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
 	console.log("https://petlover-gxdqs.run-us-west2.goorm.io");
 	
 });
