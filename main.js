@@ -16,7 +16,15 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index");
 
 //seedDB();
-mongoose.connect('mongodb://localhost:27017/pet_lover', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect('mongodb+srv://zoe:X07Rq0EyMv17sv9g@petlover-5q6bb.mongodb.net/PetLover?retryWrites=true&w=majority', {
+	useUnifiedTopology: true, 
+	useNewUrlParser: true, 
+	useCreateIndex: true
+}).then(() => {
+	console.log("Connect to DB!");
+}).catch(err => {
+	console.log("ERROR:", err.message);
+});
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
