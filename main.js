@@ -15,8 +15,8 @@ var commentRoutes = require("./routes/comments"),
 	candidateRoutes = require("./routes/candidates"),
 	indexRoutes = require("./routes/index");
 
-//seedDB();
-mongoose.connect('mongodb+srv://zoe:X07Rq0EyMv17sv9g@petlover-5q6bb.mongodb.net/PetLover?retryWrites=true&w=majority', {
+seedDB();
+mongoose.connect('mongodb+srv://Jiayue:Zoe_06030913@petlover-5q6bb.mongodb.net/PetLover?retryWrites=true&w=majority', {
 	useUnifiedTopology: true, 
 	useNewUrlParser: true, 
 	useCreateIndex: true

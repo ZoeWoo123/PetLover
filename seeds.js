@@ -53,43 +53,43 @@ function seedDB(){
 				{
 					console.log(err);
 				}
-				else
-				{
-					console.log("Removed comments!");
-					data.forEach(function(seed){
-						candidates.create(seed, function(err, candidate){
-							if(err)
-							{
-								console.log(err);
-							}
-							else
-							{
-								console.log("Created a candidate!");
-								comments.create(
-									{
-										text:"I wanna give this boy a home!",
-										author:{
-											id:"5ee1d0a764bdb50b6e8d406d",
-											username:"woo"
-										}
-									}, function(err, comment){
-										if(err)
-										{
-											console.log(err);
-										}
-										else
-										{
-											candidate.comments.push(comment);
-											candidate.save();
-											console.log("Created new comment!");
-										}
-									}
-								);
+				// else
+				// {
+				// 	console.log("Removed comments!");
+				// 	data.forEach(function(seed){
+				// 		candidates.create(seed, function(err, candidate){
+				// 			if(err)
+				// 			{
+				// 				console.log(err);
+				// 			}
+				// 			else
+				// 			{
+				// 				console.log("Created a candidate!");
+				// 				comments.create(
+				// 					{
+				// 						text:"I wanna give this boy a home!",
+				// 						author:{
+				// 							id:"5ee1d0a764bdb50b6e8d406d",
+				// 							username:"woo"
+				// 						}
+				// 					}, function(err, comment){
+				// 						if(err)
+				// 						{
+				// 							console.log(err);
+				// 						}
+				// 						else
+				// 						{
+				// 							candidate.comments.push(comment);
+				// 							candidate.save();
+				// 							console.log("Created new comment!");
+				// 						}
+				// 					}
+				// 				);
 
-							}
-						});
-					});
-				}
+				// 			}
+				// 		});
+				// 	});
+				// }
 			});
 			
 		}
