@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://zoe:X07Rq0EyMv17sv9g@petlover-5q6bb.mongodb.net/
 }).then(() => {
 	console.log("Connect to DB!");
 }).catch(err => {
-	console.log("ERROR:", err.message);
+	console.log("ERROR:", err.message)
 });
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
