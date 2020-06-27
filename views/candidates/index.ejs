@@ -1,19 +1,19 @@
 <%- include("../partials/header") %>
+<!-- jumbotron -->
+<header class = "jumbotron">
+	<div class = "container">
+		<h1>
+		Welcome to PetLover
+		</h1> 
+		<p>
+			View our lovely candidates and give them a home!
+		</p>
+		<p>
+			<a class = "btn btn-primary btn-large" href="/candidates/new">Add New Candidate!</a>
+		</p>
+	</div>
+</header>
 <div class="container">
-	<!-- jumbotron -->
-	<header class = "jumbotron">
-		<div class = "container">
-			<h1>
-			Welcome to PetLover
-			</h1> 
-			<p>
-				View our lovely candidates and give them a home!
-			</p>
-			<p>
-				<a class = "btn btn-primary btn-large" href="/candidates/new">Add New Candidate!</a>
-			</p>
-		</div>
-	</header>
 	<!-- gallery -->
 	<div class = "row">
 		<% candidates.forEach(function(candidate){ %>
@@ -30,12 +30,6 @@
 	</div>
 	
 	
-</div>
-<div class="container my-4">
-	<footer>
-		<hr/>
-		<cite>!!All animals info are fake. Images are from google.</cite>
-	</footer>
 </div>
 	
 <%- include("../partials/footer") %>
