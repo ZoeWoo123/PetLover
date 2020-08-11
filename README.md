@@ -17,3 +17,11 @@ This is a full stack website. Aim to help people publish and find pet adoption i
 
 ## Link
 [petLover](https://fierce-brook-85676.herokuapp.com/)
+
+## Demo
+![Pets Page](https://github.com/ZoeWoo123/images/blob/master/petLover.png)
+![Pet Detail](https://github.com/ZoeWoo123/images/blob/master/petLover2.png)
+![Index Page](https://github.com/ZoeWoo123/images/blob/master/petLover3.png)
+
+## Cite
+[Udemy Course](https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/3861502?start=375#overview)
